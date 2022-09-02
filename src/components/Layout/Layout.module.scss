@@ -1,0 +1,30 @@
+@import "styles/abstracts/variable";
+
+.wrapper {
+  height: 100vh;
+  background-color: $background;
+
+  display: grid;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  grid-template-columns: 1fr;
+  grid-template-rows: 100px 1fr 469px;
+}
+.header {
+  padding: 65px 80px;
+
+  grid-area: header;
+}
+.main {
+  padding: 65px 80px;
+
+  grid-area: main;
+}
+.footer {
+  padding: 80px 230px 60px;
+
+  grid-area: footer;
+  background-color: $secondary;
+}
