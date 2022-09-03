@@ -1,0 +1,22 @@
+.menu {
+  padding: 40px;
+}
+
+.menu__body {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+
+  text-decoration: none;
+}
+
+.menu__item {
+  color: #c3b9b5;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 20px;
+  text-transform: uppercase;
+}
+
+.menu__link {
+}

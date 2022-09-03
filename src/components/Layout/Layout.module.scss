@@ -13,6 +13,10 @@
   grid-template-rows: 100px 1fr 469px;
 }
 .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
   padding: 65px 80px;
 
   grid-area: header;
