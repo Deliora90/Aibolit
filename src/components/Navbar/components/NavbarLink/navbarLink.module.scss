@@ -1,0 +1,25 @@
+@import 'styles/abstracts/variable';
+
+.nav_item {
+  color: #c3b9b5;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 20px;
+  text-transform: uppercase;
+}
+
+.nav_item__link {
+}
+
+@media (max-width: ($md1 + px)) {
+  .nav_item {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: ($md3 + px)) {
+  .nav_item {
+    padding: 10px;
+    font-size: 22px;
+  }
+}

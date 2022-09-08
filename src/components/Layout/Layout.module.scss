@@ -1,4 +1,4 @@
-@import "styles/abstracts/variable";
+@import 'styles/abstracts/variable';
 
 .wrapper {
   height: 100vh;
@@ -6,9 +6,9 @@
 
   display: grid;
   grid-template-areas:
-    "header"
-    "main"
-    "footer";
+    'header'
+    'main'
+    'footer';
   grid-template-columns: 1fr;
   grid-template-rows: 100px 1fr 469px;
 }
@@ -31,4 +31,16 @@
 
   grid-area: footer;
   background-color: $secondary;
+}
+
+@media (max-width: ($md1 + px)) {
+  .header {
+    padding: 45px 60px;
+  }
+}
+
+@media (max-width: ($md3 + px)) {
+  .header {
+    padding: 15px 20px;
+  }
 }

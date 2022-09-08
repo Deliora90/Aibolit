@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "test": "jest --watchAll",
-    "mock": "json-server --watch src/db/db.json"
+    "mock": "json-server --watch src/db/db.json",
+    "prettier": "npx prettier --write ."
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.5",
@@ -18,7 +19,7 @@
     "next": "12.2.5",
     "nextjs-progressbar": "^0.0.14",
     "react": "18.2.0",
-    "react-burger-menu": "^3.0.8",
+    "react-device-detect": "^2.2.2",
     "react-dom": "18.2.0",
     "react-hook-form": "^7.34.2",
     "react-icons": "^4.4.0",
@@ -34,6 +35,7 @@
     "@types/react-dom": "18.0.6",
     "eslint": "8.23.0",
     "eslint-config-next": "12.2.5",
+    "prettier": "2.7.1",
     "sass": "^1.54.7",
     "typescript": "4.8.2"
   }

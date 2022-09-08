@@ -1,37 +1,39 @@
-import React from "react";
-import Link from "next/link";
-import s from "./navbar.module.scss";
+import React, {
+  useState,
+  PropsWithChildren,
+  useEffect,
+  useCallback,
+} from 'react';
+import cs from 'classnames';
+import { NavbarLink } from './components/NavbarLink';
+import { BurgerMenu } from 'components/BurgerMenu';
+import { useToggle } from 'hooks/useToogle';
+import s from './navbar.module.scss';
 
-export const Navbar = () => {
+type NavbarProps = {};
+
+export const Navbar = ({ children }: PropsWithChildren<NavbarProps>) => {
+  const [isOpen, toogleOpen] = useToggle();
+  if (!children) {
+    throw new Error('Children is mandatory!');
+  }
+
+  const handleClick = useCallback(() => {
+    toogleOpen();
+  }, [toogleOpen]);
+
   return (
-    <nav className={s.menu}>
-      <ul className={s.menu__body}>
-        <li className={s.menu__item}>
-          <Link href="/user/12222" className={s.menu__link}>
-            Личный кабинет
-          </Link>
-        </li>
-        <li className={s.menu__item}>
-          <Link href="/aboutUs" className={s.menu__link}>
-            О нас
-          </Link>
-        </li>
-        <li className={s.menu__item}>
-          <Link href="/news" className={s.menu__link}>
-            Новости и акции
-          </Link>
-        </li>
-        <li className={s.menu__item}>
-          <Link href="/contacts" className={s.menu__link}>
-            Контакты
-          </Link>
-        </li>
-        <li className={s.menu__item}>
-          <Link href="/blog" className={s.menu__link}>
-            Блог
-          </Link>
-        </li>
-      </ul>
-    </nav>
+    <div className={s.menu}>
+      <BurgerMenu
+        classNames={s.menu__button}
+        isOpen={isOpen}
+        onClick={handleClick}
+      />
+      <nav className={cs(s.menu__nav, s.nav, { [s.nav_active]: isOpen })}>
+        <ul className={s.nav__body}>{children}</ul>
+      </nav>
+    </div>
   );
 };
+
+Navbar.Link = NavbarLink;
