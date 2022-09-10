@@ -1,11 +1,15 @@
 @import 'styles/abstracts/variable';
 
 .nav_item {
-  color: #c3b9b5;
+  color: $primary-middle;
   font-weight: 700;
   font-size: 20px;
   line-height: 20px;
   text-transform: uppercase;
+}
+
+.nav_item_active {
+  color: $primary;
 }
 
 .nav_item__link {
