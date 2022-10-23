@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { IconContext } from 'react-icons';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { VscChromeClose } from 'react-icons/vsc';
@@ -18,6 +18,7 @@ export const BurgerMenu = ({
   onClick,
 }: BurgerMenuProps) => {
   const [defaultIsOpen, toogleOpen] = useToggle();
+
   const handleClick = (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
@@ -25,9 +26,6 @@ export const BurgerMenu = ({
     onClick(event);
   };
 
-  useEffect(() => {
-    console.log('burgerRerender');
-  }, [isOpen]);
   const burgerIsOpen = isOpen ?? defaultIsOpen;
   return (
     <IconContext.Provider value={{ className: s.burger }}>
