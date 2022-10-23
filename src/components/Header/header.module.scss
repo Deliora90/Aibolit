@@ -1,0 +1,22 @@
+@import "styles/abstracts/variable";
+
+.header {
+  grid-area: header;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 65px 80px;
+}
+
+@media (max-width: ($md1 + px)) {
+  .header {
+    padding: 45px 60px;
+  }
+}
+
+@media (max-width: ($md3 + px)) {
+  .header {
+    padding: 15px 20px;
+  }
+}

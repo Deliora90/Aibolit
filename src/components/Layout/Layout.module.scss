@@ -1,4 +1,4 @@
-@import 'styles/abstracts/variable';
+@import "styles/abstracts/variable";
 
 .wrapper {
   height: 100vh;
@@ -6,20 +6,11 @@
 
   display: grid;
   grid-template-areas:
-    'header'
-    'main'
-    'footer';
-  grid-template-columns: 1fr;
+    "header"
+    "main"
+    "footer";
+  grid-template-columns: 100%;
   grid-template-rows: 100px 1fr 469px;
-}
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  padding: 65px 80px;
-
-  grid-area: header;
 }
 .main {
   padding: 65px 80px;
@@ -31,16 +22,4 @@
 
   grid-area: footer;
   background-color: $secondary;
-}
-
-@media (max-width: ($md1 + px)) {
-  .header {
-    padding: 45px 60px;
-  }
-}
-
-@media (max-width: ($md3 + px)) {
-  .header {
-    padding: 15px 20px;
-  }
 }
