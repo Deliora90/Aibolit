@@ -1,0 +1,8 @@
+@import "styles/abstracts/variable";
+
+.footer {
+  padding: 80px 230px 60px;
+
+  grid-area: footer;
+  background-color: $secondary;
+}
