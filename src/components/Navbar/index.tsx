@@ -1,9 +1,4 @@
-import React, {
-  useState,
-  PropsWithChildren,
-  useEffect,
-  useCallback,
-} from 'react';
+import React, { PropsWithChildren, useCallback } from 'react';
 import cs from 'classnames';
 import { NavbarLink } from './components/NavbarLink';
 import { BurgerMenu } from 'components/BurgerMenu';
