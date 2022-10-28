@@ -1,7 +1,8 @@
-import Head from "next/head";
-import type { AppProps } from "next/app";
-import { Layout } from "components/Layout";
-import "styles/globals.scss";
+import Head from 'next/head';
+import type { AppProps } from 'next/app';
+import { Layout } from 'components/Layout';
+import 'styles/globals.scss';
+import 'swiper/css/bundle';
 // FIXME Переделать db на фейковый на https://fakerjs.dev/guide/usage.html
 function MyApp({ Component, pageProps }: AppProps) {
   return (

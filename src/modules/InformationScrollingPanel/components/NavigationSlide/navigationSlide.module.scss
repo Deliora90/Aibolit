@@ -1,0 +1,14 @@
+@import "styles/abstracts/mixins";
+
+.navigationSlide {
+  width: 100%;
+  @include flex("space-between");
+}
+
+.navigationSlide__header {
+}
+
+.navigationSlide__container {
+  width: 800px;
+  height: 800px;
+}
