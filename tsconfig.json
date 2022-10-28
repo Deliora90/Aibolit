@@ -21,6 +21,7 @@
     "paths": {
       "img/*": ["src/assets/img/*"],
       "components/*": ["src/components/*"],
+      "modules/*": ["src/modules/*"],
       "screens/*": ["src/screens/*"],
       "styles/*": ["src/styles/*"],
       "hooks/*": ["src/hooks/*"],
