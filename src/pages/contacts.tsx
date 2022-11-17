@@ -1,7 +1,15 @@
-import React from "react";
+import React from 'react';
+import { Layout } from 'components/Layout';
+import { Header } from 'components/Header';
+import { Footer } from 'components/Footer';
+import { InDevelopment } from 'components/InDevelopment';
 
 const Contacts = () => {
-  return <div>Contacts Page</div>;
+  return (
+    <Layout header={<Header />} footer={<Footer />}>
+      <InDevelopment />
+    </Layout>
+  );
 };
 
 export default Contacts;

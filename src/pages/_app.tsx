@@ -3,6 +3,7 @@ import type { AppProps } from 'next/app';
 import 'styles/globals.scss';
 import 'swiper/css/bundle';
 // FIXME Переделать db на фейковый на https://fakerjs.dev/guide/usage.html
+//FIXME Долго грузяться страницы
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>

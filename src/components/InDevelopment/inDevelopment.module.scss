@@ -1,0 +1,25 @@
+@import "styles/abstracts/variable";
+@import "styles/abstracts/mixins";
+
+.development {
+  padding: 40px 60px;
+  width: 100%;
+
+  @include flex(center, center);
+  gap: 20px;
+}
+
+.development__title {
+  margin: 0;
+  padding: 0;
+  width: 50%;
+
+  @include font(40px, 700, 60px, normal, $text, "RobotoSlab");
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.development__image {
+  width: 50%;
+  height: 50%;
+}
