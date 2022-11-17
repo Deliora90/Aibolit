@@ -1,0 +1,13 @@
+.button {
+  background: transparent;
+  border: none;
+  outline: none;
+  text-transform: uppercase;
+
+  &:hover {
+    cursor: pointer;
+  }
+  &:disabled {
+    cursor: not-allowed;
+  }
+}

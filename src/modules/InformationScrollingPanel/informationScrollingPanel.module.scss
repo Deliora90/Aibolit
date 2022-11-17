@@ -1,12 +1,14 @@
 @import "styles/abstracts/variable";
+@import "styles/abstracts/mixins";
 
 .swiper {
   width: 100%;
-  height: 800px;
+  height: 86vh;
 
-  & :global(.swiper-pagination-vertical) {
+  & :global(div.swiper-pagination-vertical) {
     right: auto;
     left: 10px;
+    top: 20%;
   }
 }
 
@@ -21,15 +23,12 @@ span.swiper__pagination {
 
   background: none;
 
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 20px;
-  color: #c3b9b5;
+  @include font(20px, 700, 20px, normal, $primary-middle);
   opacity: 1;
 
   &:global(.swiper-pagination-bullet-active) {
-    color: #080606;
-    border: 2px solid #080606;
+    color: $text;
+    border: 2px solid $text;
     border-right: 2px solid #ede9e8;
   }
 }

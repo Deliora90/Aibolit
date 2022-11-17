@@ -1,12 +1,20 @@
 import React, { PropsWithChildren } from 'react';
+import cs from 'classnames';
 import type { PrimaryButtonProps } from './primaryButton.types';
+import g from '../button.module.scss';
 import s from './primaryButton.module.scss';
 
 export const PrimaryButton = ({
+  type,
+  disabled,
   children,
 }: PropsWithChildren<PrimaryButtonProps>) => {
   return (
-    <button className={s.button} type="button">
+    <button
+      className={cs(g.button, s.primaryButton)}
+      type={type}
+      disabled={disabled}
+    >
       {children}
     </button>
   );

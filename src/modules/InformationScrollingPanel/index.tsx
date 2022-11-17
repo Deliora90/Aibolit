@@ -1,38 +1,31 @@
 import React from 'react';
 import cs from 'classnames';
-import { Swiper, SwiperSlide } from 'swiper/react';
 import Image from 'next/image';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Mousewheel } from 'swiper';
+import { PaginationOptions } from 'swiper/types';
+import { NavigationSlide } from './components/NavigationSlide';
 import OperatingModeImage from 'img/OperatingModeImage.png';
 import EquipmentImage from 'img/EquipmentImage.png';
-import { NavigationSlide } from './components/NavigationSlide';
 import s from './informationScrollingPanel.module.scss';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
 
-import { Pagination } from 'swiper';
+const pagination: PaginationOptions = {
+  clickable: true,
+  renderBullet: (index: number, className: string) =>
+    `<span class="${cs(className, s.swiper__pagination)}">${index + 1}</span>`,
+};
 
 export const InformationScrollingPanel = () => {
-  const pagination = {
-    clickable: true,
-
-    renderBullet: function (index: number, className: string) {
-      console.log(className);
-      return (
-        '<span class="' +
-        cs(className, s.swiper__pagination) +
-        '">' +
-        (index + 1) +
-        '</span>'
-      );
-    },
-  };
   return (
     <>
       <Swiper
         direction="vertical"
         pagination={pagination}
-        modules={[Pagination]}
+        mousewheel={true}
+        modules={[Mousewheel, Pagination]}
         className={s.swiper}
       >
         <SwiperSlide>
@@ -43,7 +36,8 @@ export const InformationScrollingPanel = () => {
             <Image
               src={OperatingModeImage}
               alt="Operation Mode Image"
-              layout="responsive"
+              layout="fill"
+              objectFit="contain"
             />
           </NavigationSlide>
         </SwiperSlide>
@@ -55,7 +49,8 @@ export const InformationScrollingPanel = () => {
             <Image
               src={EquipmentImage}
               alt="Equipment Image"
-              layout="responsive"
+              layout="fill"
+              objectFit="contain"
             />
           </NavigationSlide>
         </SwiperSlide>

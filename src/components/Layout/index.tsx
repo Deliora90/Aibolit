@@ -1,16 +1,17 @@
 import React, { PropsWithChildren } from 'react';
-import { Header } from 'components/Header';
-import { Footer } from 'components/Footer';
 import s from './layout.module.scss';
 
-type LayoutProps = {} & PropsWithChildren;
+type LayoutProps = {
+  header?: JSX.Element;
+  footer?: JSX.Element;
+} & PropsWithChildren;
 
-export const Layout = ({ children }: LayoutProps) => {
+export const Layout = ({ header, footer, children }: LayoutProps) => {
   return (
     <div className={s.wrapper}>
-      <Header />
+      {header}
       <main className={s.main}>{children}</main>
-      <Footer />
+      {footer}
     </div>
   );
 };

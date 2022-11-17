@@ -11,8 +11,34 @@
   }
 }
 
-@mixin flex($justify-content) {
+@mixin flex($align-items: center, $justify-content: null, $flex-direction: null) {
   display: flex;
-  align-items: center;
-  justify-content: $justify-content;
+  align-items: $align-items;
+  @if $justify-content {
+    justify-content: $justify-content;
+  }
+  @if $flex-direction {
+    flex-direction: $flex-direction;
+  }
+}
+
+@mixin font($font-size, $font-weight, $line-height, $font-style, $color: null, $font-family: null) {
+  @if $font-weight {
+    font-weight: $font-weight;
+  }
+  @if $line-height {
+    line-height: $line-height;
+  }
+  @if $font-size {
+    font-size: $font-size;
+  }
+  @if $font-style {
+    font-style: $font-style;
+  }
+  @if $color {
+    color: $color;
+  }
+  @if $font-family {
+    font-family: $font-family;
+  }
 }

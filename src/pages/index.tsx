@@ -1,11 +1,13 @@
 import type { NextPage } from 'next';
+import { Layout } from 'components/Layout';
+import { Header } from 'components/Header';
 import { InformationScrollingPanel } from 'modules/InformationScrollingPanel';
 
 const Home: NextPage = () => {
   return (
-    <div>
+    <Layout header={<Header />}>
       <InformationScrollingPanel />
-    </div>
+    </Layout>
   );
 };
 

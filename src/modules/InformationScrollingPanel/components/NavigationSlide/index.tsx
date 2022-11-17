@@ -1,6 +1,6 @@
 import React, { PropsWithChildren } from 'react';
 import Title from 'components/Title';
-import PrimaryButton from 'components/PrimaryButton';
+import { PrimaryButton } from 'components/Button';
 import s from './navigationSlide.module.scss';
 
 export type NavigationSlideProps = {
@@ -20,6 +20,8 @@ export const NavigationSlide = ({
       <Title>{title}</Title>
       <PrimaryButton>{buttonText}</PrimaryButton>
     </header>
-    <div className={s.navigationSlide__container}>{children}</div>
+    <div className={s.navigationSlide__container}>
+      <div className={s.navigationSlide__wrapper}>{children}</div>
+    </div>
   </article>
 );
