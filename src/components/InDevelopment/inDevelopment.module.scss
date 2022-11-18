@@ -12,7 +12,7 @@
 .development__title {
   margin: 0;
   padding: 0;
-  width: 50%;
+  width: 60%;
 
   @include font(40px, 700, 60px, normal, $text, "RobotoSlab");
   text-transform: uppercase;
@@ -20,6 +20,6 @@
 }
 
 .development__image {
-  width: 50%;
-  height: 50%;
+  width: 40%;
+  height: 40%;
 }

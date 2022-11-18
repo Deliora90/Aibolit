@@ -1,10 +1,18 @@
 import Head from 'next/head';
 import type { AppProps } from 'next/app';
+import { PageWithLayout } from 'types/PageWithLayout';
+
 import 'styles/globals.scss';
 import 'swiper/css/bundle';
+
 // FIXME Переделать db на фейковый на https://fakerjs.dev/guide/usage.html
-//FIXME Долго грузяться страницы
-function MyApp({ Component, pageProps }: AppProps) {
+
+type AppPropsWithLayout = AppProps & {
+  Component: PageWithLayout;
+};
+
+export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
+  const getLayout = Component.getLayout ?? ((page) => page);
   return (
     <>
       <Head>
@@ -16,9 +24,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Component {...pageProps} />
+      {getLayout(<Component {...pageProps} />)}
     </>
   );
 }
-
-export default MyApp;

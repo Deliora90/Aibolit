@@ -1,15 +1,11 @@
-import React from 'react';
-import { Layout } from 'components/Layout';
-import { Header } from 'components/Header';
-import { Footer } from 'components/Footer';
 import { InDevelopment } from 'components/InDevelopment';
+import { getLayout } from 'helpers/getLayout/getLayout';
+import type { PageWithLayout } from 'types/PageWithLayout';
 
-const Contacts = () => {
-  return (
-    <Layout header={<Header />} footer={<Footer />}>
-      <InDevelopment />
-    </Layout>
-  );
+const Contacts: PageWithLayout = () => {
+  return <InDevelopment />;
 };
+
+Contacts.getLayout = getLayout;
 
 export default Contacts;

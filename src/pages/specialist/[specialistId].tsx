@@ -1,19 +1,16 @@
 import React from 'react';
 import { useRouter } from 'next/router';
-import { Layout } from 'components/Layout';
-import { Header } from 'components/Header';
-import { Footer } from 'components/Footer';
 import { InDevelopment } from 'components/InDevelopment';
+import { getLayout } from 'helpers/getLayout/getLayout';
+import type { PageWithLayout } from 'types/PageWithLayout';
 
-const SpecialistPage = () => {
+const SpecialistPage: PageWithLayout = () => {
   const router = useRouter();
   const { specialistId } = router.query;
 
-  return (
-    <Layout header={<Header />} footer={<Footer />}>
-      <InDevelopment />
-    </Layout>
-  );
+  return <InDevelopment />;
 };
+
+SpecialistPage.getLayout = getLayout;
 
 export default SpecialistPage;

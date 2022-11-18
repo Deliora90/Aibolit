@@ -1,15 +1,11 @@
-import React from 'react';
-import { Layout } from 'components/Layout';
-import { Header } from 'components/Header';
-import { Footer } from 'components/Footer';
 import { InDevelopment } from 'components/InDevelopment';
+import { getLayout } from 'helpers/getLayout/getLayout';
+import type { PageWithLayout } from 'types/PageWithLayout';
 
-const AboutUs = () => {
-  return (
-    <Layout header={<Header />}>
-      <InDevelopment />
-    </Layout>
-  );
+const AboutUs: PageWithLayout = () => {
+  return <InDevelopment />;
 };
+
+AboutUs.getLayout = getLayout;
 
 export default AboutUs;
