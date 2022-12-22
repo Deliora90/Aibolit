@@ -1,5 +1,7 @@
 import Head from 'next/head';
 import type { AppProps } from 'next/app';
+import { Provider } from 'react-redux';
+import { store } from 'state/store';
 import { PageWithLayout } from 'types/PageWithLayout';
 
 import 'styles/globals.scss';
@@ -14,7 +16,7 @@ type AppPropsWithLayout = AppProps & {
 export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   const getLayout = Component.getLayout ?? ((page) => page);
   return (
-    <>
+    <Provider store={store}>
       <Head>
         <title>Айболит</title>
         <meta name="description" content="Айболит круглосуточная ветклиника" />
@@ -25,6 +27,6 @@ export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {getLayout(<Component {...pageProps} />)}
-    </>
+    </Provider>
   );
 }
