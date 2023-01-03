@@ -9,5 +9,5 @@ server.get('/cities', (req, res) => {
 });
 
 server.listen(5000, () => {
-  console.log('JSON Server is running');
+  console.log('JSON Server started on http://localhost:5000, url: http://localhost:5000 ');
 });

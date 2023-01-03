@@ -1,22 +1,21 @@
 import Head from 'next/head';
 import type { AppProps } from 'next/app';
 import { Provider } from 'react-redux';
-import { store } from 'state/store';
+import { store, wrapper } from 'state/store';
 import { PageWithLayout } from 'types/PageWithLayout';
 
 import 'styles/globals.scss';
 import 'swiper/css/bundle';
-
-// FIXME Переделать db на фейковый на https://fakerjs.dev/guide/usage.html
 
 type AppPropsWithLayout = AppProps & {
   Component: PageWithLayout;
 };
 
 export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
+  const { store: wrappedStore } = wrapper.useWrappedStore(store);
   const getLayout = Component.getLayout ?? ((page) => page);
   return (
-    <Provider store={store}>
+    <Provider store={wrappedStore}>
       <Head>
         <title>Айболит</title>
         <meta name="description" content="Айболит круглосуточная ветклиника" />
