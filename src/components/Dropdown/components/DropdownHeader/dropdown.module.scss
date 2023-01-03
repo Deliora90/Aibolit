@@ -1,0 +1,14 @@
+@import "styles/abstracts/variable";
+
+.dropdownHeader {
+  min-width: 50px;
+  color: $secondary;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+}
