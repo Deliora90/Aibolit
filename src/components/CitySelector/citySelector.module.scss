@@ -1,0 +1,22 @@
+@import "styles/abstracts/variable";
+@import "styles/abstracts/mixins";
+
+.citySelector {
+}
+
+.citiSelectorContainer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 10px;
+}
+
+.citiSelectorIcon {
+  color: $primary;
+  font-size: 20px;
+}
+
+.headerSelector {
+  @include font(20px, 700, 20px, normal, $primary, "FuturaNew");
+  text-transform: uppercase;
+}
