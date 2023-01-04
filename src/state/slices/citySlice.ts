@@ -24,5 +24,5 @@ const citySlice = createSlice({
 export const { selectCity } = citySlice.actions;
 
 export const citySelector = (state: RootState) => state.city.key;
-
+//TODO: Доделать связку next ssr и redux-toolkit
 export default citySlice.reducer;
