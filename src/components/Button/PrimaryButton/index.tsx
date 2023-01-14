@@ -8,12 +8,14 @@ export const PrimaryButton = ({
   type,
   disabled,
   children,
+  onClick,
 }: PropsWithChildren<PrimaryButtonProps>) => {
   return (
     <button
       className={cs(g.button, s.primaryButton)}
       type={type}
       disabled={disabled}
+      onClick={onClick}
     >
       {children}
     </button>

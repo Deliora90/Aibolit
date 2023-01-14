@@ -26,6 +26,7 @@ export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {getLayout(<Component {...pageProps} />)}
+      <div id="modal-root" />
     </Provider>
   );
 }

@@ -1,0 +1,7 @@
+@import "styles/abstracts/mixins";
+
+.modal_footer {
+  width: 100%;
+  @include flex(center, center);
+  padding-bottom: 20px;
+}

@@ -1,3 +1,3 @@
-import { IButtonProps } from '../button.types';
+import { IButtonProps, IButtonEvents } from '../button.types';
 
-export type PrimaryButtonProps = IButtonProps & {};
+export type PrimaryButtonProps = IButtonProps & IButtonEvents & {};

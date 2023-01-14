@@ -1,0 +1,34 @@
+@import "styles/abstracts/mixins";
+
+.modal {
+}
+
+.modal__wrapper {
+  position: fixed;
+  inset: 0;
+  overflow: auto;
+  outline: 0;
+  z-index: 1000;
+}
+
+.modal__container {
+  position: relative;
+
+  top: 100px;
+  width: 400px;
+  height: 368px;
+  margin: 0 auto;
+  @include flex(center, space-between, column);
+
+  background: #ffffff;
+  box-shadow: 2px 2px 20px rgba(155, 82, 50, 0.1);
+  border-radius: 20px;
+}
+
+.modal__mask {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  height: 100%;
+  background-color: #00000073;
+}

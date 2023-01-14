@@ -5,6 +5,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Mousewheel } from 'swiper';
 import { PaginationOptions } from 'swiper/types';
 import { NavigationSlide } from './components/NavigationSlide';
+import { Modal } from 'components/Modal';
+import { useToggle } from 'hooks/useToogle';
 import OperatingModeImage from 'img/OperatingModeImage.png';
 import EquipmentImage from 'img/EquipmentImage.png';
 import s from './informationScrollingPanel.module.scss';
@@ -19,6 +21,12 @@ const pagination: PaginationOptions = {
 };
 
 export const InformationScrollingPanel = () => {
+  const [isOpen, toggleOpen] = useToggle();
+
+  const handleClick = () => {
+    toggleOpen();
+  };
+
   return (
     <>
       <Swiper
@@ -32,6 +40,7 @@ export const InformationScrollingPanel = () => {
           <NavigationSlide
             title="aibolit is a round-the-clock vet clinic"
             buttonText="sign up"
+            onClick={handleClick}
           >
             <Image
               src={OperatingModeImage}
@@ -45,6 +54,7 @@ export const InformationScrollingPanel = () => {
           <NavigationSlide
             title="сomfortable equipped hospitals"
             buttonText="sign up"
+            onClick={handleClick}
           >
             <Image
               src={EquipmentImage}
@@ -55,6 +65,17 @@ export const InformationScrollingPanel = () => {
           </NavigationSlide>
         </SwiperSlide>
       </Swiper>
+      <Modal
+        open={isOpen}
+        onCancel={toggleOpen}
+        title={'Sign up'}
+        okText={'Next'}
+        onOk={() => {
+          console.log('OK');
+        }}
+      >
+        This is Modal
+      </Modal>
     </>
   );
 };

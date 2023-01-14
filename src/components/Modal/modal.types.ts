@@ -1,5 +1,8 @@
+//FIXME: Properties repeat in other components
 export interface IModalProps {
   open: boolean;
+  okText?: string;
+  title?: string;
   width?: string;
   height?: string;
 }

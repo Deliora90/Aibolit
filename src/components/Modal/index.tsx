@@ -1,4 +1,9 @@
-import React, { useMemo, PropsWithChildren } from 'react';
+import React, {
+  useEffect,
+  useRef,
+  PropsWithChildren,
+  CSSProperties,
+} from 'react';
 import cs from 'classnames';
 import { isBrowser } from 'react-device-detect';
 import ReactDOM from 'react-dom';
@@ -12,22 +17,40 @@ type ModalProps = IModalProps & IModalEvents;
 
 export const Modal = ({
   open,
+  width,
+  height,
+  title,
+  okText,
   children,
   onCancel,
   onOk,
 }: PropsWithChildren<ModalProps>) => {
-  const element = useMemo(() => document.getElementById('modal-root'), []);
+  const element = useRef<HTMLElement | null>(null);
 
-  if (!isBrowser || !element || !open) {
+  useEffect(() => {
+    element.current = document.getElementById('modal-root');
+  }, []);
+
+  if (!isBrowser || !element.current || !open) {
     return null;
   }
 
+  const modalSize: CSSProperties = {
+    width: width,
+    height: height,
+  };
+
   return ReactDOM.createPortal(
-    <div className={cs(s.modal, s.modal__wrapper)}>
-      <ModalHeader onCancel={onCancel} />
-      <ModalBody>{children}</ModalBody>
-      <ModalFooter onCancel={onCancel} onOk={onOk} />
+    <div className={s.modal}>
+      <div className={s.modal__mask} />
+      <div className={s.modal__wrapper}>
+        <div className={s.modal__container} style={modalSize}>
+          <ModalHeader title={title} onCancel={onCancel} />
+          <ModalBody>{children}</ModalBody>
+          <ModalFooter onCancel={onCancel} onOk={onOk} okText={okText} />
+        </div>
+      </div>
     </div>,
-    element
+    element.current
   );
 };

@@ -18,7 +18,7 @@ export const NavigationSlide = ({
   <article className={s.navigationSlide}>
     <header className={s.navigationSlide__header}>
       <Title>{title}</Title>
-      <PrimaryButton>{buttonText}</PrimaryButton>
+      <PrimaryButton onClick={onClick}>{buttonText}</PrimaryButton>
     </header>
     <div className={s.navigationSlide__container}>
       <div className={s.navigationSlide__wrapper}>{children}</div>

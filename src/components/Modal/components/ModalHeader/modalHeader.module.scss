@@ -1,0 +1,35 @@
+@import "styles/abstracts/variable";
+@import "styles/abstracts/mixins";
+
+.modal_header {
+  width: 100%;
+}
+
+.modal_header__title {
+  margin: 0 10px;
+
+  text-align: center;
+  @include font(30px, 300, 40px, normal, $text, "FuturaNew");
+}
+
+//FIXME: Styles repeat
+.modal_header__btn {
+  width: 100%;
+  @include flex(center, flex-end);
+  padding: 20px 20px 0px;
+
+  background: transparent;
+  border: none;
+  outline: none;
+  text-transform: uppercase;
+
+  font-size: 20px;
+  color: $primary-middle;
+
+  &:hover {
+    cursor: pointer;
+  }
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
