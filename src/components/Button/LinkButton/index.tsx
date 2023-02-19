@@ -1,17 +1,17 @@
 import React, { PropsWithChildren } from 'react';
 import cs from 'classnames';
-import type { PrimaryButtonProps } from './primaryButton.types';
+import type { LinkButtonProps } from './linkButton.types';
 import g from '../button.module.scss';
-import s from './primaryButton.module.scss';
+import s from './linkButton.module.scss';
 
-export const PrimaryButton = ({
+export const LinkButton = ({
   type,
   disabled,
   children,
   onClick,
-}: PropsWithChildren<PrimaryButtonProps>) => (
+}: PropsWithChildren<LinkButtonProps>) => (
   <button
-    className={cs(g.button, s.primaryButton)}
+    className={cs(g.button, s.linkButton)}
     type={type}
     disabled={disabled}
     onClick={onClick}

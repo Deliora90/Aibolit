@@ -2,6 +2,7 @@
 export interface IModalProps {
   open: boolean;
   okText?: string;
+  cancelText?: string;
   title?: string;
   width?: string;
   height?: string;

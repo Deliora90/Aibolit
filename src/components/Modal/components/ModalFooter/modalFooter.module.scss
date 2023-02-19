@@ -5,3 +5,11 @@
   @include flex(center, center);
   padding-bottom: 20px;
 }
+
+.modal_footer__control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 8px;
+}

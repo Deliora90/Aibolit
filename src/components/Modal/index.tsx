@@ -4,7 +4,6 @@ import React, {
   PropsWithChildren,
   CSSProperties,
 } from 'react';
-import cs from 'classnames';
 import { isBrowser } from 'react-device-detect';
 import ReactDOM from 'react-dom';
 import { ModalHeader } from 'components/Modal/components/ModalHeader';
@@ -21,6 +20,7 @@ export const Modal = ({
   height,
   title,
   okText,
+  cancelText,
   children,
   onCancel,
   onOk,
@@ -47,7 +47,12 @@ export const Modal = ({
         <div className={s.modal__container} style={modalSize}>
           <ModalHeader title={title} onCancel={onCancel} />
           <ModalBody>{children}</ModalBody>
-          <ModalFooter onCancel={onCancel} onOk={onOk} okText={okText} />
+          <ModalFooter
+            onCancel={onCancel}
+            onOk={onOk}
+            okText={okText}
+            cancelText={cancelText}
+          />
         </div>
       </div>
     </div>,
