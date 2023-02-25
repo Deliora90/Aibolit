@@ -1,5 +1,5 @@
-import React from 'react';
-import { PrimaryButton, LinkButton } from 'components/Button';
+import React, { PropsWithChildren, useMemo } from 'react';
+import { Button } from 'components/Button';
 import { IModalEvents } from 'components/Modal/modal.types';
 import s from './modalFooter.module.scss';
 
@@ -8,21 +8,28 @@ type ModalFooterProps = IModalEvents & { okText?: string; cancelText?: string };
 export const ModalFooter = ({
   okText,
   cancelText,
+  children,
   onOk,
   onCancel,
-}: ModalFooterProps) => {
+}: PropsWithChildren<ModalFooterProps>) => {
+  if (children === null) return <></>;
+
   return (
     <div className={s.modal_footer}>
-      <div className={s.modal_footer__control}>
-        {onOk && (
-          <PrimaryButton type="submit" onClick={onOk}>
-            {okText ?? 'OK'}
-          </PrimaryButton>
-        )}
-        <LinkButton type="reset" onClick={onCancel}>
-          {cancelText ?? 'Cancel'}
-        </LinkButton>
-      </div>
+      {children !== undefined ? (
+        children
+      ) : (
+        <div className={s.modal_footer__control}>
+          {onOk && (
+            <Button type="primary" htmlType="submit" onClick={onOk}>
+              {okText ?? 'OK'}
+            </Button>
+          )}
+          <Button type="link" htmlType="reset" onClick={onCancel}>
+            {cancelText ?? 'Cancel'}
+          </Button>
+        </div>
+      )}
     </div>
   );
 };

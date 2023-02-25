@@ -1,12 +1,10 @@
-@import "styles/abstracts/mixins";
-
 .modal {
 }
 
 .modal__wrapper {
   position: fixed;
   inset: 0;
-  overflow: auto;
+  overflow: hidden;
   outline: 0;
   z-index: 1000;
 }
@@ -16,9 +14,7 @@
 
   top: 100px;
   width: 400px;
-  height: 368px;
   margin: 0 auto;
-  @include flex(center, space-between, column);
 
   background: #ffffff;
   box-shadow: 2px 2px 20px rgba(155, 82, 50, 0.1);

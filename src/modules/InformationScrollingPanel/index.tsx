@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Mousewheel } from 'swiper';
 import { PaginationOptions } from 'swiper/types';
 import { NavigationSlide } from './components/NavigationSlide';
-import { Modal } from 'components/Modal';
+import { AuthDialog } from 'modules/AuthDialog';
 import { useToggle } from 'hooks/useToogle';
 import OperatingModeImage from 'img/OperatingModeImage.png';
 import EquipmentImage from 'img/EquipmentImage.png';
@@ -65,17 +65,7 @@ export const InformationScrollingPanel = () => {
           </NavigationSlide>
         </SwiperSlide>
       </Swiper>
-      <Modal
-        open={isOpen}
-        onCancel={toggleOpen}
-        title={'Sign up'}
-        okText={'Next'}
-        onOk={() => {
-          console.log('OK');
-        }}
-      >
-        This is Modal
-      </Modal>
+      <AuthDialog open={isOpen} onCancel={handleClick} />
     </>
   );
 };

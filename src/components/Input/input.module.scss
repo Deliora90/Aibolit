@@ -1,0 +1,40 @@
+@import "styles/abstracts/variable";
+
+.input {
+  width: 100%;
+}
+
+.input__text {
+  position: relative;
+
+  width: 100%;
+  border: 1px solid #ede9e8;
+  border-radius: 20px;
+  padding: 16px;
+  outline: none;
+
+  transition: color, box-shadow 0.3s ease;
+
+  &:hover {
+    box-shadow: 0px 4px 20px $primary;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    border-color: $primary;
+  }
+}
+
+.input__text_error {
+  border-color: $error;
+}
+
+.input__error_text {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+
+  font-size: 12px;
+  color: $error;
+}

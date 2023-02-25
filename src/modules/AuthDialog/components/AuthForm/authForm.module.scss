@@ -1,0 +1,11 @@
+@import "styles/abstracts/mixins";
+
+.auth_form {
+  width: 100%;
+  @include flex(center, center, column);
+  gap: 32px;
+}
+
+.auth_form__control {
+  @include flex(center, center, column);
+}
