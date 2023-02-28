@@ -2,7 +2,8 @@ import { configureStore, ConfigureStoreOptions } from '@reduxjs/toolkit';
 import { setupListeners } from '@reduxjs/toolkit/dist/query/react';
 import { createWrapper } from 'next-redux-wrapper';
 import { api } from 'services/api';
-import cityReducer from './slices/citySlice';
+import cityReducer from './slices/city';
+import authReducer from './slices/auth';
 
 export const createStore = (
   options?: ConfigureStoreOptions['preloadedState']
@@ -10,6 +11,7 @@ export const createStore = (
   configureStore({
     reducer: {
       city: cityReducer,
+      auth: authReducer,
       [api.reducerPath]: api.reducer,
     },
     middleware: (getDefaultMiddleware) =>

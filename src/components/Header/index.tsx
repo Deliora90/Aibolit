@@ -5,7 +5,7 @@ import { CitySelector } from 'components/CitySelector';
 import { useGetCitiesQuery } from 'services/catalog/catalog';
 import { useAppDispatch } from 'hooks/useAppDispatch';
 import { useTypedSelector } from 'hooks/useTypedSelector';
-import { citySelector, selectCity } from 'state/slices/citySlice';
+import { citySelector, selectCity } from 'state/slices/city';
 import s from './header.module.scss';
 
 export const Header = () => {

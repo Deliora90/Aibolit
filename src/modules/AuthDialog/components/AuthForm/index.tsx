@@ -6,6 +6,7 @@ import { AuthValues } from 'modules/AuthDialog/authDialog.types';
 import s from './authForm.module.scss';
 
 type AuthFormProps = {
+  isLoading: boolean;
   onSubmit: (values: any) => void;
 };
 
@@ -25,7 +26,7 @@ const validate = (values: AuthValues) => {
   return errors;
 };
 
-export const AuthForm = ({ onSubmit }: AuthFormProps) => {
+export const AuthForm = ({ isLoading, onSubmit }: AuthFormProps) => {
   const form = useFormik({ initialValues: init, validate, onSubmit });
 
   return (
@@ -35,7 +36,7 @@ export const AuthForm = ({ onSubmit }: AuthFormProps) => {
         name="login"
         type="text"
         value={form.values.login}
-        errorText={form.errors.login}
+        errorText={form.touched.login ? form.errors.login : ''}
         onChange={form.handleChange}
       />
       <Input
@@ -43,11 +44,11 @@ export const AuthForm = ({ onSubmit }: AuthFormProps) => {
         name="password"
         type="text"
         value={form.values.password}
-        errorText={form.errors.password}
+        errorText={form.touched.password ? form.errors.password : ''}
         onChange={form.handleChange}
       />
       <div className={s.auth_form__control}>
-        <Button type="primary" htmlType="submit">
+        <Button type="primary" htmlType="submit" disabled={isLoading}>
           Next
         </Button>
         <Button type="link" htmlType="reset">

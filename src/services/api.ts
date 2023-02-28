@@ -17,7 +17,7 @@ const baseQueryRetry = retry(baseQuery, { maxRetries: 4 });
 export const api = createApi({
   reducerPath: 'api',
   baseQuery: baseQueryRetry,
-  tagTypes: ['Cities'],
+  tagTypes: ['Cities', 'Auth'],
   endpoints: () => ({}),
 });
 
