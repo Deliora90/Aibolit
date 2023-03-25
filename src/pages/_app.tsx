@@ -3,6 +3,7 @@ import type { AppProps } from 'next/app';
 import { Provider } from 'react-redux';
 import { store, wrapper } from 'state/store';
 import { PageWithLayout } from 'types/PageWithLayout';
+import { NotificationProvider } from 'components/Notification';
 
 import 'styles/globals.scss';
 import 'swiper/css/bundle';
@@ -25,7 +26,9 @@ export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {getLayout(<Component {...pageProps} />)}
+      <NotificationProvider>
+        {getLayout(<Component {...pageProps} />)}
+      </NotificationProvider>
       <div id="modal-root" />
     </Provider>
   );
